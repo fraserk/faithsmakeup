@@ -4,7 +4,7 @@ global:
     - LARAVEL_ENV: production
     
 #db1:
-  name: nygoing
+  name: faithsmakeup
   type: mysql
 cache1:
   type: memcached
@@ -28,8 +28,7 @@ web1:
     - curl
     - gd
     - mbstring
-  before_deploy:
-    
+  before_deploy:    
     #- "php artisan migrate --package=cartalyst/sentry"
     - "php artisan migrate"
   after_deploy:
