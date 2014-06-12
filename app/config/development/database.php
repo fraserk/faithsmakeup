@@ -7,10 +7,10 @@
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'homestead',
+			'host'      => 'localhost',
 			'database'  => 'homestead',
-			'username'  => 'secret',
-			'password'  => '',
+			'username'  => 'homestead',
+			'password'  => 'secret',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
