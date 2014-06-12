@@ -9,7 +9,7 @@ global:
 cache1:
   type: memcached
 web1:
-  name: metrolancer
+  name: faithsmakeup
   shared_writable_dirs:
     - app/storage/cache
     - app/storage/logs
@@ -30,7 +30,7 @@ web1:
     - mbstring
   before_deploy:
     
-    - "php artisan migrate --package=cartalyst/sentry"
+    #- "php artisan migrate --package=cartalyst/sentry"
     - "php artisan migrate"
   after_deploy:
     - "rm -f storage/cache/*"
