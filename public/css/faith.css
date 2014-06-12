@@ -1,0 +1,64 @@
+body{
+    background: #000;
+}
+
+.header{
+    color: #fff;
+    border-bottom: 1px solid #9dd
+    }
+
+
+.logo{
+    font-family: 'Wire One', sans-serif;
+    color: #fff;
+    font-size: 64px
+}
+
+.tagline{
+    font-family: 'Poiret One', cursive;
+    margin: 40px 0 0  -50px
+}
+
+.nav{
+    margin-top: 40px;
+    font-family: 'Poiret One', cursive;
+}
+.makeup{
+    font-family:monospace
+}
+.content{
+    margin: 20px 0;   
+}
+.content p{
+    color: #fff;
+}
+.content h2{
+     font-family: 'Wire One', sans-serif;
+    color: #fff;
+    font-size: 44px
+}
+
+.footer{
+    border-top: 1px solid #9dd;
+    color: #fff
+}
+.large {
+    font-size: 30px;
+    line-height: 30px;
+}
+/*.content img{
+    padding: 10px;
+    margin:  5px;
+    border: 1px solid #222;
+    
+}*/
+
+
+ .description {
+color: #fff;
+display: block;
+
+}
+
+
+
