@@ -6,6 +6,6 @@
 	{
 		protected $fillable = ['image_path','thumb_path','note'];
 		public function category(){
-			return $this->belongsTo('category','category_id');
+			return $this->belongsTo('Category','category_id');
 		}
 	}

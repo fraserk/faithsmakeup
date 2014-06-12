@@ -5,6 +5,6 @@
 		    public $timestamps = false;
 
 		public function portfolio(){
-			return $this->hasMany('portfolio');
+			return $this->hasMany('Portfolio');
 		}
 	}
