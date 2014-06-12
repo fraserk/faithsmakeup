@@ -25,7 +25,7 @@
 
             <ul class="inline-list right">
                 <li><a href="{{URL::to('/')}}">Home</a></li>
-                <li>{{link_to_route('about','About Faith s.')}}</li>
+                <li>{{link_to_route('about','About Faith S.')}}</li>
                 <li>{{link_to_route('portfolio','Portfolio')}}</li>
                 <li>{{link_to_route('faq','F.A.Q')}}</li>
                 <li>{{link_to_route('contact','Contact me')}}</li>
