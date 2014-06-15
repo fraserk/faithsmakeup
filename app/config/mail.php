@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('faith@faitsmakeup.com' => null, 'Faith' => null),
 
 	/*
 	|--------------------------------------------------------------------------
