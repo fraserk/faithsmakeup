@@ -6,7 +6,14 @@
 			@foreach($albums as $d)
 			<div class="large-3 medium-3 columns thumb end">
 			<div class="preview">
-                <a href="{{URL::route('show.portfolio',$d->portfolio[0]->category_id)}}" class="th">{{HTML::image('uploads/' .$d->id .'/' .$d->portfolio[0]->thumb_path)}}</a>
+                <a href="{{URL::route('show.portfolio',$d->id)}}" class="th">
+                
+                    @if($d->thumbnail)
+                    {{HTML::image('/uploads/thumbs/small/' .$d->thumbnail)}}
+                    @else
+                      {{HTML::image('img/noimg.png')}}
+                    @endif
+                </a>
 				<span class="description"><small>{{$d->name}} </small></span>
 			</div>
 		</div>

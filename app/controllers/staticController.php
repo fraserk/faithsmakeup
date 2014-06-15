@@ -31,6 +31,43 @@ class staticController extends \BaseController {
 	{
 		return View::make('static.contact');
 	}
+
+	public function sendcontact()
+		{
+			$data = array( 
+
+				'name'=>Input::get('name'),
+				'detail'=>Input::get('detail'),
+				'email' => Input::get('email'),
+				'subject' => Input::get('subject')
+				);
+			$rules =  array(
+				'name'=>'required',
+				'detail'=> 'required',
+				'email' =>'required|email',
+				'subject' => 'required'
+
+				);
+
+			$v = Validator::make($data, $rules);
+			if($v->fails())
+			{
+				return  Redirect::route('contact')->withErrors($v)->withinput();
+
+			}
+			Mail::send('static.message',$data,function($message)
+			{
+				$message->from(Input::get('email'));
+				$message->to('kimfraser@gmail.com','kim Fraser')->subject('Faithsmakeup.com - Message');
+
+
+
+			});
+		return  Redirect::route('contact')->with('message','Thank You, I have receieve your message.');
+
+		}
+
+
 	public function create()
 	{
 		//

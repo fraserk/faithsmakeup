@@ -4,7 +4,7 @@ body{
 
 .header{
     color: #fff;
-    border-bottom: 1px solid #9dd
+    border-bottom: 1px solid #0078a0;
     }
 
 
@@ -42,7 +42,7 @@ a{
 }
 
 .footer{
-    border-top: 1px solid #9dd;
+    border-top: 1px solid #0078a0;
     color: #fff
 }
 .large {
