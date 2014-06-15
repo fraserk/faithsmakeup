@@ -27,9 +27,13 @@ Route::get('/album/{id}',['as'=>'show.portfolio','uses'=>'portfolioController@sh
 
 Route::group(['prefix'=>'backend'], function()
 {
+	Route::get('/',['as'=>'backend','uses'=>'categoryController@create']);
 	Route::get('/upload/{id}',['as'=>'imageupload','uses'=>'portfolioController@upload']);
 	Route::post('/upload',['as'=>'store.image','uses'=>'portfolioController@store']);
 
 	Route::get('/create/album',['as'=>'create.album','uses'=>'categoryController@create']);
+	Route::get('/edit/album/{id}',['as'=>'edit.album','uses'=>'categoryController@edit']);
 	Route::post('/create/album',['as'=>'store.album','uses'=>'categoryController@store']);
+	Route::put('/create/album/{id}',['as'=>'update.album','uses'=>'categoryController@update']);
+	Route::delete('/delete/album/{id}',['as'=>'destroy.album','uses'=>'categoryController@destroy']);
 });

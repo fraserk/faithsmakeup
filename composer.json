@@ -5,8 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"intervention/image": "2.*",
-		"frozennode/administrator": "dev-master"
+		"intervention/image": "2.*"
 	},
 	"autoload": {
 		"classmap": [

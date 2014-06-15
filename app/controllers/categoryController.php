@@ -108,7 +108,8 @@ class categoryController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$data = Category::find($id);
+		return View::make('categories.edit', compact('data'));
 	}
 
 
@@ -120,7 +121,45 @@ class categoryController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$album = Category::find($id);
+
+		$input = Input::all();
+        $rules = array( 'image'=>'image|mimes:jpg,gif,png,jpeg|max:2000','name'=>'required') ;
+        $v = Validator::make($input, $rules);
+
+        if ($v->fails())
+        {
+
+            return Redirect::route('edit.album',$album->id)->witherrors($v);
+        }
+
+		if(Input::hasfile('image'))
+		{
+			$imgwidth = getimagesize(Input::file('image'));
+            $extension = Input::file('image')->getClientOriginalExtension();
+            $filename = Str_random(8) .'.' . $extension;
+            $image_path = $filename;
+			
+			$album->thumbnail = $image_path;
+            $destinationpath = 'uploads/'.$id ;
+            Input::file('image')->move($destinationpath,$filename);
+
+            Image::make('uploads/'.$id .'/'.$image_path)->resize(150,null, function($constraint){
+          	 $constraint->aspectRatio();
+   			 $constraint->upsize();
+          })->save('uploads/'.$id .'/' .$image_path);
+
+			
+		}
+
+		$album->name = Input::get('name');
+		$album->save();
+
+		return Redirect::route('create.album')->with('message','Album updated');
+
+
+
+
 	}
 
 
@@ -132,7 +171,12 @@ class categoryController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$album = Category::find($id);
+		$destinationpath = 'uploads/'.$album->id .'/' .$album->thumbnail ;
+		File::delete($destinationpath);
+		$album->delete();
+
+		return  Redirect::route('create.album')->with('message','Album Deleted');
 	}
 
 

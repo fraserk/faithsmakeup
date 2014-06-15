@@ -9,7 +9,7 @@
                 <a href="{{URL::route('show.portfolio',$d->id)}}" class="th">
                 
                     @if($d->thumbnail)
-                    {{HTML::image('/uploads/thumbs/small/' .$d->thumbnail)}}
+                    {{HTML::image('/uploads/' .$d->id .'/' .$d->thumbnail)}}
                     @else
                       {{HTML::image('img/noimg.png')}}
                     @endif

@@ -27,7 +27,8 @@
                      	<small>Set as album cover.</small>
                 <a href="{{URL::route('show.portfolio',$d->category_id)}}" class="th">
                 	
-                	{{HTML::image('uploads/' .$data->id .'/' .$d->image_path)}}</a>
+                	{{HTML::image('uploads/' .$data->id .'/' .$d->image_path)}}
+                </a>
                             
 				 				{{Form::open(['route'=>['portfolio.destroy',$d->id],'method'=>'DELETE'])}}
 				 				{{Form::submit('Delete',['class'=>'button tiny alert'])}}

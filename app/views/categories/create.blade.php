@@ -28,7 +28,7 @@
 
 
                 </a>
-                            <span class="description"><small>{{$d->name}} [edit]</small></span>
+                            <span class="description"><small>{{$d->name}} [{{link_to_route('edit.album','Edit',$d->id)}}]</small></span>
                     
                      </div>
               </div>
