@@ -58,7 +58,7 @@ class staticController extends \BaseController {
 			Mail::send('static.message',$data,function($message)
 			{
 				$message->from(Input::get('email'));
-				$message->to('kimfraser@gmail.com','kim Fraser')->subject('Faithsmakeup.com - Message');
+				$message->to('faith@faitsmakeup.com','faith')->subject('Faithsmakeup.com - Message');
 
 
 
