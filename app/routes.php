@@ -19,7 +19,7 @@ Route::get('/', function()
 Route::get('/about_faith_s',['as'=>'about','uses'=>'staticController@about']);
 Route::get('/faq',['as'=>'faq','uses'=>'staticController@faq']);
 Route::get('/contact',['as'=>'contact','uses'=>'staticController@contact']);
-Route::post('/contact',array('as'=>'sendcontact','uses'=>'StaticController@sendcontact'));
+Route::post('/contact',array('as'=>'sendcontact','uses'=>'staticController@sendcontact'));
 Route::resource('portfolio', 'portfolioController');
 Route::get('/portfolio',['as'=>'portfolio','uses'=>'categoryController@index']);
 Route::get('/album/{id}',['as'=>'show.portfolio','uses'=>'portfolioController@show']);
