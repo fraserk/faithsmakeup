@@ -9,7 +9,8 @@ class staticController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$images = Homeimage::all();
+    	return View::make('static.home',compact('images'));
 	}
 
 	public function about()
@@ -66,71 +67,94 @@ class staticController extends \BaseController {
 		return  Redirect::route('contact')->with('message','Thank You, I have receieve your message.');
 
 		}
+    public function homeimage()
+    {
+    	$data = Homeimage::all();
+    	return View::make('static.homeimage',compact('data'));
+
+    }
 
 
-	public function create()
+    public function dohomeimage()
 	{
-		//
+		$input = Input::all();
+		//$category_id = Input::get('id');
+        $rules = array( 'image'=>'image|mimes:jpg,gif,png,jpeg|max:2000|required') ;
+        $v = Validator::make($input, $rules);
+
+        if ($v->fails())
+        {
+
+            return Redirect::route('homepageimage')->witherrors($v);
+        }
+        
+        
+        if (Input::hasfile('image'))
+        {   
+            $imgwidth = getimagesize(Input::file('image'));
+            $extension = Input::file('image')->getClientOriginalExtension();
+            $filename = Str_random(8) .'.' . $extension;
+            $image_path = $filename;
+                       
+            $homepageimage = new Homeimage(['name'=>$image_path]);          
+			//$category = Category::find($category_id);          
+            $homepageimage->save(); 
+
+            $destinationpath = 'uploads/homepage/' ;
+            Input::file('image')->move($destinationpath,$image_path);
+            
+            
+            //$tags = 'kim';
+            Cloudy::upload($destinationpath .'/' .$filename,$filename);  //send photo to cloudy
+            File::delete($destinationpath .'/'  .$image_path);
+           //  // temp folder
+            // if($imgwidth[0] > '950') //resize image if its bigger than 350 px
+            // // {
+            // //     //resize the image
+//           Image::make('uploads/homepage/' .$image_path)->resize(950, null, function ($constraint) {
+//    													$constraint->aspectRatio();
+//														})->save('uploads/homepage/thumb_' .$image_path);
+//
+//           Image::make('uploads/homepage/' .$image_path)->resize(300, null, function ($constraint) {
+//    													$constraint->aspectRatio();
+//														})->save('uploads/homepage/admin_thumb_' .$image_path);
+//           File::delete($destinationpath .'/'  .$image_path);
+
+           //create the thumbnail as usuall
+       //    Image::make('uploads/'.$category_id .'/'.$portfolio_image->image_path)->resize(150,null, function($constraint){
+       //    	 $constraint->aspectRatio();
+   			 // $constraint->upsize();
+       //    })->save('uploads/'.$category_id .'/' .$portfolio_image->thumb_path);
+           return Redirect::route('homepageimage')->with('message','file uploaded');
+        }
 	}
 
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+	public function delhomeimage()
 	{
-		//
+
+		$image = Homeimage::find(Input::get('id'));
+		$image->delete();
+		$destinationpath = 'uploads/homepage/' ;
+		File::delete($destinationpath .'/thumb_' .$image->name);
+		File::delete($destinationpath .'/admin_thumb_' .$image->name);
+
+
+		return Redirect::route('homepageimage')->with('message','Image deleted successfully');
 	}
 
+	public function blog()
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
 	{
-		//
+		$data = Blog::wherePublish(true)->orderBy('id','desc')->paginate(20);
+		return View::make('static.blog',compact('data'));
 	}
+    public function showblog($id)
+    {
+        $data = Blog::find($id);
+        return View::make('static.blogDetail',compact('data'));
+    }
 
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
 
 
 }

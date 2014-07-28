@@ -67,18 +67,18 @@ class portfolioController extends \BaseController {
             Input::file('image')->move($destinationpath,$filename);
 
             //$tags = 'kim';
-            //Cloudy::upload($destinationpath .'/' .$filename,$filename,$tags);  //send photo to cloudy
-           // File::deletedirectory($destinationpath); // temp folder
+            Cloudy::upload($destinationpath .'/' .$filename,$filename);  //send photo to cloudy
+            File::deletedirectory($destinationpath); // temp folder
             // if($imgwidth[0] > '340') //resize image if its bigger than 350 px
             // // {
             // //     //resize the image
           // Image::make('uploads/'.$category_id .'/'.$portfolio_image->image_path)->resize(678, 350)->save('uploads/'.$category_id .'/' .$portfolio_image->image_path);
 
            //create the thumbnail as usuall
-          Image::make('uploads/'.$category_id .'/'.$portfolio_image->image_path)->resize(150,null, function($constraint){
-          	 $constraint->aspectRatio();
-   			 $constraint->upsize();
-          })->save('uploads/'.$category_id .'/' .$portfolio_image->thumb_path);
+//          Image::make('uploads/'.$category_id .'/'.$portfolio_image->image_path)->resize(150,null, function($constraint){
+//          	 $constraint->aspectRatio();
+//   			 $constraint->upsize();
+//          })->save('uploads/'.$category_id .'/' .$portfolio_image->thumb_path);
            return Redirect::route('imageupload',$category_id)->with('message','file uploaded');
         }
 	}

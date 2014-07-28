@@ -1,6 +1,6 @@
-@extends('layouts.template')
-	@section('content')
-       <h2>Create Your Portfolio Albums</h2>
+@extends('layouts.admin')
+	@section('sidebar')
+       <h4>Create Your Portfolio Album</h4>
 
        @if ($errors->any())
        
@@ -10,7 +10,8 @@
        {{Form::open(['files'=>true,'route'=>'store.album'])}}
               @include('static._albumform')
        {{Form::close()}}
-       <hr />
+    @stop
+       @section('content')
  @foreach(array_chunk($data->getCollection()->all() ,4) as $albums)
               <div class="row">
 
@@ -20,7 +21,7 @@
                       
                 <a href="{{URL::route('imageupload',$d->id)}}" class="th">
                     @if($d->thumbnail)
-                    {{HTML::image('uploads/' .$d->id .'/' .$d->thumbnail)}}
+                    <img src="{{Cloudy::show($d->thumbnail, array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 0));}}">
                     @else
                       {{HTML::image('img/noimg.png')}}
                     @endif

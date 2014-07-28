@@ -8,10 +8,11 @@
 	 <ul class="example-orbit" data-orbit>
 	@foreach($images as $d)
 	  <li>
-
-	  	{{HTML::image('uploads/' .$d->category_id .'/' .$d->image_path,null,['alt'=>'slide' .$d->id])}}
+        <img src="{{Cloudy::show($d->image_path, array('width' => 950, 'height' => 700, 'crop' => 'fit', 'radius' => 0));}}">
+  
 	    <div class="orbit-caption">
 	      {{$d->note}}
+        </div>
 	  </li>
 	 @endforeach
   

@@ -9,7 +9,7 @@
                 <a href="{{URL::route('show.portfolio',$d->id)}}" class="th">
                 
                     @if($d->thumbnail)
-                    {{HTML::image('/uploads/' .$d->id .'/' .$d->thumbnail)}}
+                    <img src="{{Cloudy::show($d->thumbnail, array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 0));}}">
                     @else
                       {{HTML::image('img/noimg.png')}}
                     @endif

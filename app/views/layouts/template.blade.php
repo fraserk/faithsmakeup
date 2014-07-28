@@ -17,7 +17,7 @@
 <section class="header"> 
     <div class="row">
       <div class="large-2 columns">
-        <div class="logo">{{HTML::image('img/logo.png')}}</div>           
+        <div class="logo"><a href="/">{{HTML::image('img/logo.png')}}</a></div>           
       </div>
         
      
@@ -28,6 +28,7 @@
                 <li>{{link_to_route('about','About Faith S.')}}</li>
                 <li>{{link_to_route('portfolio','Portfolio')}}</li>
                 <li>{{link_to_route('faq','F.A.Q')}}</li>
+                <li>{{link_to_route('blog','Blog')}}</li>
                 <li>{{link_to_route('contact','Contact me')}}</li>
             </ul>
         </div>
@@ -56,6 +57,7 @@
 </section>
     
     {{HTML::script('js/vendor/jquery.js')}}
+    
     {{HTML::script('js/foundation.min.js')}}
     
     <script>
