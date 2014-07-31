@@ -7,4 +7,4 @@
 
        		{{Form::label('image','Upload image' )}}
        		{{Form::file('image')}}
-       		{{Form::submit('sbumit',['class'=>'button radius  tiny'])}} {{link_to_route('create.album','Cancel',null,['class'=>'button radius tiny Secondary'])}}
+       		{{Form::submit('sbumit',['class'=>'button radius  tiny'])}} 
