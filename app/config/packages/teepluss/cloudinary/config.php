@@ -12,12 +12,12 @@ return array(
     |
     */
 
-    'cloudName'  => getenv('cloudName'),
-    'baseUrl'    => getenv('baseurl'),
-    'secureUrl'  => getenv('secureUrl'),
-    'apiBaseUrl' => getenv('apiBaseUrl'),
-    'apiKey'     => getenv('apiKey'),
-    'apiSecret'  => getenv('apiSecret'),
+    'cloudname'  => getenv('CLOUDNAME'),
+    'baseurl'    => getenv('BASEURL'),
+    'secureurl'  => getenv('SECUREURL'),
+    'apibaseurl' => getenv('APIBASEURL'),
+    'apikey'     => getenv('APIKEY'),
+    'apisecret'  => getenv('APISECRET'),
 
     /*
     |--------------------------------------------------------------------------
