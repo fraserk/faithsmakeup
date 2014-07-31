@@ -24,8 +24,8 @@
                 <nav class="top-bar" data-topbar>
                       <ul class="title-area">
                          <li class="logo">
-                           <h1><a href="/">Faith S.</a> </h1> 
-                             <span class="tagline">Makeup Artist</span>
+                           <h1><a href="/">Faith</a> </h1> <span class="tagline">Makeup Artist</span>
+                             
 				          
                           </li>
                              <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
@@ -37,12 +37,12 @@
                         <!-- Right Nav Section -->
                         <ul class="right">
                             <li><a href="{{URL::to('/')}}">Home</a></li>
-                            <li>{{link_to_route('about','About Faith S.')}}</li>
+                            <li>{{link_to_route('about','About Me')}}</li>
                             <li>{{link_to_route('portfolio','Portfolio')}}</li>
                             <li>{{link_to_route('faq','F.A.Q')}}</li>
                             <li>{{link_to_route('blog','Blog')}}</li>
-                            <li>{{link_to_route('service','Service')}}</li>
-                            <li>{{link_to_route('contact','Contact me')}}</li>
+                            <li>{{link_to_route('service','Services')}}</li>
+                            <li>{{link_to_route('contact','Contact Me')}}</li>
                         </ul>
 
                         <!-- Left Nav Section -->
@@ -74,7 +74,7 @@
     </div>
 </section>
     
-    {{HTML::script('js/vendor/jquery.js')}}dfs
+    {{HTML::script('js/vendor/jquery.js')}}
     
     {{HTML::script('js/foundation.min.js')}}
     

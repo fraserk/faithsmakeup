@@ -1,5 +1,5 @@
 @extends('layouts.template')
     @section('content')
-        <h3>Service</h3>
+        <h2>Services</h2>
             {{$data->service}}
     @stop

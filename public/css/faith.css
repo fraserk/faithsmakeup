@@ -10,7 +10,9 @@ p{
     border-bottom: 1px solid #0078a0;
     }
 
-
+.top-bar-section ul{
+    margin: 10px 0;
+}
 .logo{
     font-family: 'Wire One', sans-serif;
     color: #fff;

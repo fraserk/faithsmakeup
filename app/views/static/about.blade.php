@@ -1,6 +1,6 @@
 @extends('layouts.template')
 	@section('content')
-		<h2 class="subheader"> Who is Faith S.?</h2>
+		<h2 class="subheader"> About Me</h2>
             <p>{{$data->about_me}}</p>
 
 			<div class="row">
