@@ -22,6 +22,8 @@ Route::get('/portfolio',['as'=>'portfolio','uses'=>'categoryController@index']);
 Route::get('/album/{id}',['as'=>'show.portfolio','uses'=>'portfolioController@show']);
 Route::get('/blog',['as'=>'blog','uses'=>'staticController@blog']);
 Route::get('/blog/{id}',['as'=>'show.blog','uses'=>'staticController@showblog']);
+Route::get('/service',['as'=>'service','uses'=>'staticController@service']);
+
 
 Route::group(['prefix'=>'backend','before'=>'auth.basic'], function()
 {

@@ -15,7 +15,8 @@ class staticController extends \BaseController {
 
 	public function about()
 	{
-		return View::make('static.about');
+		$data = Sitesetting::first();
+        return View::make('static.about',compact('data'));
 	}
 	/**
 	 * Show the form for creating a new resource.
@@ -24,8 +25,9 @@ class staticController extends \BaseController {
 	 */
 
 	public function faq() 
-	{
-		return View::make('static.faq');
+	{ 
+        $data = Sitesetting::first();
+		return View::make('static.faq',compact('data'));
 	}
 
 	public function contact() 
@@ -152,6 +154,12 @@ class staticController extends \BaseController {
     {
         $data = Blog::find($id);
         return View::make('static.blogDetail',compact('data'));
+    }
+    
+    public function service()
+    {
+        $data = Sitesetting::first();
+        return View::make('static.service',compact('data'));
     }
 
 

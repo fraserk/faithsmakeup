@@ -16,7 +16,7 @@ class sitesettingController extends \BaseController {
 	public function dofaq()
 	{
 		$data = Input::get('faq');
-		$data = Sitesetting::find($id)->update(['faq'=>$data]);
+		$data = Sitesetting::first()->update(['faq'=>$data]);
 		return Redirect::route('list.faq')->with('message','FAQ updated..');
 	}
 

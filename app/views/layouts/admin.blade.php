@@ -56,6 +56,7 @@
               <li>{{link_to_route('list.service','Manage Service')}}</li>
 
               <li>{{link_to_route('backendblogs','Blog')}}</li>
+             <li>{{HTML::link('/','visit site')}}</li>
               
 
               
@@ -96,7 +97,9 @@
 
     <script type="text/javascript">
 tinymce.init({
-    selector: ".detail"
+    selector: ".detail",
+    plugins: "image",
+    image_advtab: true
  });
 </script>
   </body>

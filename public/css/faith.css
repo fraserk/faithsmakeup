@@ -1,7 +1,10 @@
 body{
     background: #000;
 }
-
+p{
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
 .header{
     color: #fff;
     border-bottom: 1px solid #0078a0;
@@ -11,12 +14,19 @@ body{
 .logo{
     font-family: 'Wire One', sans-serif;
     color: #fff;
-    font-size: 64px
+    
+}
+.header h1{
+     font-family: 'Wire One', sans-serif;
+    color: #fff;
+    margin: 9px 5px 0;
+    
+    line-height: 0.5;
 }
 
 .tagline{
     font-family: 'Poiret One', cursive;
-    margin: 40px 0 0  -50px
+    margin: 0 0 0 5px;
 }
 
 a{
@@ -43,7 +53,9 @@ a{
 
 .footer{
     border-top: 1px solid #0078a0;
-    color: #fff
+    color: #fff;
+    padding: 20px 0;
+
 }
 .large {
     font-size: 30px;
@@ -62,6 +74,16 @@ color: #fff;
 display: block;
 
 }
+.top-bar {
+    background: #000;
+}
+.top-bar-section li:not(.has-form) a:not(.button){
+    background: #000;
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+background: #2D215E;
+}
 
-
-
+.top-bar.expanded .title-area {
+background: #000000;
+}
