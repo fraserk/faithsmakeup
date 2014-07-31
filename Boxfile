@@ -2,12 +2,7 @@
 global:
   env:
     - LARAVEL_ENV: production
-    - CLOUDENAME  : faithsmakeup-com
-    - BASEURL     : http://res.cloudinary.com/faithsmakeup-com
-    - SECUREAPI   : https://res.cloudinary.com/faithsmakeup-com
-    - APIBASEURL  : https://api.cloudinary.com/v1_1/faithsmakeup-com
-    - APIKEY     : 4916248479928
-    - APISECRET  : mGeIWlIreJJvKI2aPnMtyk6gOMA
+   
     
 #db1:
   name: faithsmakeup

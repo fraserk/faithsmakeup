@@ -99,7 +99,9 @@
 tinymce.init({
     selector: ".detail",
     plugins: "image",
-    image_advtab: true
+    image_advtab: true,
+    plugins: "fullscreen",
+    
  });
 </script>
   </body>

@@ -16,10 +16,10 @@
 				{{Form::label('name','Your Name:')}}
 				{{Form::text('name')}}
 
-				{{Form::label('email','Your Email Address')}}
+				{{Form::label('email','Your Email Address:')}}
 				{{Form::text('email')}}
 
-				{{Form::label('subject','Subject')}}
+				{{Form::label('subject','Subject:')}}
 				{{Form::text('subject')}}
 
 				{{Form::label('detail','Message:')}}
