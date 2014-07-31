@@ -47,7 +47,7 @@
         @endif    
 <section class="content">
     <div class="row">
-      <div class="large-3 columns menu_bg">
+      <div class="large-3 columns medium-3 menu_bg">
             <ul class="side-nav">  
               <li>{{link_to_route('homepageimage','Manage Homepage')}}</li>
               <li>{{link_to_route('create.album','Manage Portfolio')}}</li>
@@ -65,11 +65,11 @@
             </ul>
         </div>
    
-        <div class="large-6 columns">
+        <div class="large-6 medium-3 columns">
             @yield('content')
         </div>
 
-        <div class="large-3 columns">
+        <div class="large-3 medium-3 columns">
             @yield('sidebar')
         </div>
     
