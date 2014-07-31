@@ -143,11 +143,13 @@ class categoryController extends \BaseController {
 			$album->thumbnail = $image_path;
             $destinationpath = 'uploads/'.$id ;
             Input::file('image')->move($destinationpath,$filename);
-
-            Image::make('uploads/'.$id .'/'.$image_path)->resize(150,null, function($constraint){
-          	 $constraint->aspectRatio();
-   			 $constraint->upsize();
-          })->save('uploads/'.$id .'/' .$image_path);
+            
+            Cloudy::upload($destinationpath .'/' .$filename,$filename);  //send photo to cloudy
+            File::deletedirectory($destinationpath); // temp folder
+//            Image::make('uploads/'.$id .'/'.$image_path)->resize(150,null, function($constraint){
+//          	 $constraint->aspectRatio();
+//   			 $constraint->upsize();
+//          })->save('uploads/'.$id .'/' .$image_path);
 
 			
 		}
