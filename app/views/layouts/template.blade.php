@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faith - Make up artist - @yield('title','.')</title>
-	<meta name"description" content=@yield('description', 'Best NYC makeup artist offering natural beautiful airbrush makeup and makeup lessons.')>
-	<meta name"keyword" content=@yield('keyword', 'airbrush makeup, allure magazine, best NJ makeup artist, best NYC Makuep artist, best airbrush makeup, best new york city bridal makeup, indian weddings, natural makeup, new york magazine, on location beauty services on location bridal services')>
+	<meta name= "description" content=@yield('description', 'Best NYC makeup artist offering natural beautiful airbrush makeup and makeup lessons.')>
+	<meta name ="keyword" content=@yield('keyword', 'airbrush makeup, allure magazine, best NJ makeup artist, best NYC Makuep artist, best airbrush makeup, best new york city bridal makeup, indian weddings, natural makeup, new york magazine, on location beauty services on location bridal services')>
     {{HTML::style('css/foundation.css')}}
     {{HTML::style('css/faith.css')}}
     {{HTML::style('icons/foundation-icons.css')}}

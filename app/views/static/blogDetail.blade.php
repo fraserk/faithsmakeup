@@ -25,5 +25,11 @@
 			<small>invalid blog post..</small>
 		@endif
 	@stop
-
+@section('title')
+    {{$data-title}}
+    
+@stop
+@section('description')
+    {{Str::words($data->body,'75','.')}}
+@stop
 	
