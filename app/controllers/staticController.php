@@ -150,9 +150,9 @@ class staticController extends \BaseController {
 		$data = Blog::wherePublish(true)->orderBy('id','desc')->paginate(20);
 		return View::make('static.blog',compact('data'));
 	}
-    public function showblog($id)
+    public function showblog($slug)
     {
-        $data = Blog::find($id);
+        $data = Blog::whereSlug($slug)->first();
         return View::make('static.blogDetail',compact('data'));
     }
     

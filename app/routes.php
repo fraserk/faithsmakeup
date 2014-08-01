@@ -43,7 +43,7 @@ Route::group(['prefix'=>'backend','before'=>'auth.basic'], function()
 
 	Route::get('/blogs',['as'=>'backendblogs','uses'=>'blogController@index']);
 	Route::post('/blogs',['as'=>'store.blog','uses'=>'blogController@store']);
-	Route::get('/blogs/{id}',['as'=>'edit.blog','uses'=>'blogController@edit']);
+	Route::get('/blogs/{slug}',['as'=>'edit.blog','uses'=>'blogController@edit']);
     Route::patch('/blogs/{id}',['as'=>'update.blog','uses'=>'blogController@update']);
 
     Route::get('/faq',['as'=>'list.faq','uses'=>'sitesettingController@faq']);
